@@ -5,6 +5,8 @@ from os.path import dirname
 from pipeline.conf import settings
 from pipeline.compilers import SubProcessCompiler
 
+PIPELINE_STYLUS_ARGUMENTS = settings.PIPELINE_STYLUS_ARGUMENTS
+PIPELINE_STYLUS_ARGUMENTS += ' '.join([" -I %s "% path for path in finders.find('stylus',all=True)])
 
 class StylusCompiler(SubProcessCompiler):
     output_extension = 'css'
