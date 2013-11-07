@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from os.path import dirname
 
+from django.contrib.staticfiles import finders
+
 from pipeline.conf import settings
 from pipeline.compilers import SubProcessCompiler
 
